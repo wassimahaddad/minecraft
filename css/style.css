@@ -13,7 +13,6 @@
 .container {
   width: 800px;
   height: 100vh;
-  /* border: 1px solid black; */
   margin-right: auto;
   margin-left: auto;
 }
@@ -27,12 +26,6 @@
   background-color: skyblue;
 }
 
-.tool-panel {
-  width: 100%;
-  height: calc(100vh - 800px);
-  background-color: black;
-}
-
 .cell {
   width: 40px;
   height: 40px;
@@ -42,6 +35,7 @@
   border: 1px blue solid;
 }
 
+/* --------------------- Materials ----------------------- */
 .ground {
   background: url("../img/ground.jpg") no-repeat center center / cover;
 }
@@ -67,12 +61,16 @@
 .bush {
   background: url("../img/bush.jpg") no-repeat center center/cover;
 }
+/* ---------------- Tools and Inventory ------------------ */
 
 .tool-panel {
   display: grid;
   grid-template-columns: 2fr 1fr;
+  width: 100%;
+  height: calc(100vh - 800px);
+  background-color: black;
 }
-
+/* ------------------------ Tools  ----------------------- */
 .tools {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -98,7 +96,7 @@
 .tool3 {
   background: url("../img/shovel.png") no-repeat center center/cover;
 }
-
+/* ---------------------- Inventory --------------------- */
 .inventory {
   border-left: 1px solid #333;
   display: grid;
@@ -107,9 +105,52 @@
 }
 
 .inventory-item {
-  border: 1px solid white;
+  border: 1px solid #333;
   width: 40px;
   height: 40px;
   margin-top: 25px;
   margin-left: 25px;
+  color: red;
+  padding-top: 22px;
+  padding-left: 5px;
+}
+
+.inv-item1 {
+  background: url("../img/ground.jpg") no-repeat center center / cover;
+}
+
+.inv-item2 {
+  background: url("../img/grass-top_ground.jpg") no-repeat center center/cover;
+}
+
+.inv-item3 {
+  background: url("../img/tree-trunk.jpg") no-repeat center center/cover;
+}
+
+.inv-item4 {
+  background: url("../img/tree-top.jpg") no-repeat center center/cover;
+}
+
+.inv-item5 {
+  background: url("../img/cloud.jpg") no-repeat center center/cover;
+}
+.inv-item6 {
+  background: url("../img/stone.jpg") no-repeat center center/cover;
+}
+
+/* ------------- Tools and Inventory hover --------------- */
+
+.tool1:hover,
+.tool2:hover,
+.tool3:hover {
+  border: 1px solid white;
+}
+
+.inv-item1:hover,
+.inv-item2:hover,
+.inv-item3:hover,
+.inv-item4:hover,
+.inv-item5:hover,
+.inv-item6:hover {
+  border: 3px solid red;
 }

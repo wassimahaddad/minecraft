@@ -1,4 +1,4 @@
-//Matrix generation
+//------------------ Matrix generation ----------------------
 const gameGridArr = [];
 const gameGrid = document.querySelector(".game-world");
 
@@ -88,7 +88,27 @@ tool2.nextSibling.className = "tool tool3";
 
 const inventory = document.querySelector(".inventory");
 for (let r = 0; r < 6; r++) {
-  let item = document.createElement("div");
-  item.className = "inventory-item";
-  inventory.appendChild(item);
+  let invItem = document.createElement("div");
+  inventory.appendChild(invItem);
 }
+
+const invItem1 = inventory.firstChild;
+invItem1.textContent = 0;
+invItem1.className = "inventory-item inv-item1";
+const invItem2 = invItem1.nextSibling;
+invItem2.textContent = 0;
+invItem2.className = "inventory-item inv-item2";
+const invItem3 = invItem2.nextSibling;
+invItem3.textContent = 0;
+invItem3.className = "inventory-item inv-item3";
+const invItem4 = invItem3.nextSibling;
+invItem4.textContent = 0;
+invItem4.className = "inventory-item inv-item4";
+const invItem5 = invItem4.nextSibling;
+invItem5.textContent = 0;
+invItem5.className = "inventory-item inv-item5";
+const invItem6 = invItem5.nextSibling;
+invItem6.textContent = 0;
+invItem6.className = "inventory-item inv-item6";
+
+//--------------------- dynamics ---------------------------
