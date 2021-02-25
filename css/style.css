@@ -1,0 +1,60 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 800px;
+  height: 100vh;
+  /* border: 1px solid black; */
+  margin-right: auto;
+  margin-left: auto;
+}
+.game-world {
+  display: grid;
+  grid-template-columns: repeat(20, 1fr);
+  column-gap: 0;
+  align-items: center;
+  justify-content: center;
+  height: 800px;
+  background-color: skyblue;
+}
+
+.tool-panel {
+  width: 100%;
+  height: calc(100vh - 800px);
+  background-color: black;
+}
+
+.cell {
+  width: 40px;
+  height: 40px;
+}
+
+.cell:hover {
+  border: 1px grey solid;
+}
+
+.ground {
+  background: url("../img/ground.jpg") no-repeat center center / cover;
+}
+
+.grass-top {
+  background: url("../img/grass-top_ground.jpg") no-repeat center center/cover;
+}
+
+.tree-trunk {
+  background: url("../img/tree-trunk.jpg") no-repeat center center/cover;
+}
+
+.tree-top {
+  background: url("../img/tree-top.jpg") no-repeat center center/cover;
+}
+
+.cloud {
+  background: url("../img/cloud.jpg") no-repeat center center/cover;
+}
+.stone {
+  background: url("../img/stone.jpg") no-repeat center center/cover;
+}
