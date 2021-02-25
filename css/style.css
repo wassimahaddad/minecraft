@@ -58,3 +58,6 @@
 .stone {
   background: url("../img/stone.jpg") no-repeat center center/cover;
 }
+.bush {
+  background: url("../img/bush.jpg") no-repeat center center/cover;
+}

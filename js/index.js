@@ -44,10 +44,18 @@ const generateWorld = () => {
       ) {
         cell.className = "cell cloud";
         //draw stone
-      } else if () {
-        
-      }
-      else {
+      } else if (
+        r == 12 &&
+        (c == 9 || c == 10 || c == 11 || c == 18 || c == 19)
+      ) {
+        cell.className = "cell stone";
+        //draw bush
+      } else if (
+        (r == 11 && (c == 3 || c == 4 || c == 5)) ||
+        (r == 12 && (c == 2 || c == 3 || c == 4 || c == 5 || c == 6))
+      ) {
+        cell.className = "cell bush";
+      } else {
         cell.className = "cell";
       }
       gameGrid.appendChild(cell);
