@@ -40,7 +40,8 @@ const generateWorld = () => {
         (r == 5 && c == 6) ||
         (r == 5 && c == 7) ||
         (r == 5 && c == 8) ||
-        (r == 5 && c == 9)
+        (r == 6 && c == 5) ||
+        (r == 6 && c == 6)
       ) {
         cell.className = "cell cloud";
         //draw stone
@@ -55,6 +56,7 @@ const generateWorld = () => {
         (r == 12 && (c == 2 || c == 3 || c == 4 || c == 5 || c == 6))
       ) {
         cell.className = "cell bush";
+        //draw background
       } else {
         cell.className = "cell";
       }
@@ -64,3 +66,24 @@ const generateWorld = () => {
   }
 };
 generateWorld();
+
+//----------------------- Tools ----------------------------
+
+const tools = document.querySelector(".tools");
+for (let r = 0; r < 3; r++) {
+  let tool = document.createElement("div");
+  tools.appendChild(tool);
+}
+
+const tool1 = tools.firstChild;
+tool1.textContent = "AXE";
+tool1.className = "tool tool1";
+const tool2 = tool1.nextSibling;
+tool2.textContent = "PICKAXE";
+tool2.className = "tool tool2";
+tool2.nextSibling.textContent = "SHOVEL";
+tool2.nextSibling.className = "tool tool3";
+
+//--------------------- Inventory ---------------------------
+
+const inventory = document.querySelector(".inventory");

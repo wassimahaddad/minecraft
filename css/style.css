@@ -1,7 +1,13 @@
+@font-face {
+  font-family: Minecraft;
+  src: url(../fonts/Minecraft.ttf);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: "Minecraft";
 }
 
 .container {
@@ -33,7 +39,7 @@
 }
 
 .cell:hover {
-  border: 1px grey solid;
+  border: 1px blue solid;
 }
 
 .ground {
@@ -60,4 +66,38 @@
 }
 .bush {
   background: url("../img/bush.jpg") no-repeat center center/cover;
+}
+
+.tool-panel {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+.tools {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.tool {
+  border: 1px solid #333;
+  margin: 20px 40px;
+  color: grey;
+  text-align: end;
+  padding-top: 80px;
+  padding-right: 5px;
+  font-size: 13px;
+}
+
+.tool1 {
+  background: url("../img/axe.png") no-repeat center center/cover;
+}
+.tool2 {
+  background: url("../img/diamond_pickaxe.png") no-repeat center center/cover;
+}
+.tool3 {
+  background: url("../img/shovel.png") no-repeat center center/cover;
+}
+
+.inventory {
+  border-left: 1px solid #333;
 }
