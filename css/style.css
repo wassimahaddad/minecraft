@@ -85,7 +85,8 @@
   text-align: end;
   padding-top: 80px;
   padding-right: 5px;
-  font-size: 13px;
+  font-size: 12px;
+  font-weight: bold;
 }
 
 .tool1 {
@@ -100,4 +101,15 @@
 
 .inventory {
   border-left: 1px solid #333;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 50px);
+}
+
+.inventory-item {
+  border: 1px solid white;
+  width: 40px;
+  height: 40px;
+  margin-top: 25px;
+  margin-left: 25px;
 }

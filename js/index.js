@@ -87,3 +87,8 @@ tool2.nextSibling.className = "tool tool3";
 //--------------------- Inventory ---------------------------
 
 const inventory = document.querySelector(".inventory");
+for (let r = 0; r < 6; r++) {
+  let item = document.createElement("div");
+  item.className = "inventory-item";
+  inventory.appendChild(item);
+}
