@@ -48,8 +48,8 @@
   background: url("../img/tree-trunk.jpg") no-repeat center center/cover;
 }
 
-.tree-top {
-  background: url("../img/tree-top.jpg") no-repeat center center/cover;
+.leaves-bush {
+  background: url("../img/leaves-bush.jpg") no-repeat center center/cover;
 }
 
 .cloud {
@@ -58,9 +58,7 @@
 .stone {
   background: url("../img/stone.jpg") no-repeat center center/cover;
 }
-.bush {
-  background: url("../img/bush.jpg") no-repeat center center/cover;
-}
+
 /* ---------------- Tools and Inventory ------------------ */
 
 .tool-panel {
@@ -134,8 +132,8 @@
   background: url("../img/tree-trunk.jpg") no-repeat center center/cover;
 }
 
-.inv-grass {
-  background: url("../img/tree-top.jpg") no-repeat center center/cover;
+.inv-leaves-bush {
+  background: url("../img/leaves-bush.jpg") no-repeat center center/cover;
 }
 
 .inv-cloud {
@@ -148,7 +146,7 @@
 .inv-ground:hover,
 .inv-grass-top:hover,
 .inv-tree-trunk:hover,
-.inv-grass:hover,
+.inv-leaves-bush:hover,
 .inv-cloud:hover,
 .inv-stone:hover {
   border: 3px solid red;
@@ -157,5 +155,7 @@
 /* ---------------------- Dymanics --------------------- */
 
 .hidden {
-  /* remove background */
+  background: transparent;
+  width: 40px;
+  height: 40px;
 }
