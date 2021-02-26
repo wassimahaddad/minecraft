@@ -67,7 +67,7 @@ const generateWorld = () => {
 };
 generateWorld();
 
-//----------------------- Tools ----------------------------
+//---------------- Tools Generation -------------------------
 
 const tools = document.querySelector(".tools");
 for (let r = 0; r < 3; r++) {
@@ -85,7 +85,7 @@ const shovel = pickAxe.nextSibling;
 shovel.textContent = "SHOVEL";
 shovel.className = "tool shovel";
 
-//--------------------- Inventory ---------------------------
+//----------------- Inventory Generation --------------------
 
 const inventory = document.querySelector(".inventory");
 for (let r = 0; r < 6; r++) {
@@ -112,12 +112,12 @@ const invStone = invCloud.nextSibling;
 invStone.textContent = 0;
 invStone.className = "inventory-item inv-stone";
 
-//--------------------- dynamics ---------------------------
+//--------------------- dynamics ---------------------------|
 
-//------------ variables,arrays and objects
+//------------ variables,arrays and objects---------------->
 
-let toolClicked = 0; // Tool picked: AXE=1, PICKAXE=2, SHOVEL=3
-
+let itemClicked = 0; // Tool picked: AXE=1, PICKAXE=2, SHOVEL=3
+const toolPanel = document.querySelector(".tool-panel");
 // Inventory object for storing removed cells by type
 
 let counter = {
@@ -129,69 +129,68 @@ let counter = {
   invStone: 0,
 };
 
-//Array inventory elements used with invItemClicked()
+// array to identify elements in the tool panel
 
-const invType = [
-  invCloud,
+const tooAndInvType = [
+  axe,
+  pickAxe,
+  shovel,
+  invGround,
+  invGrassTop,
   invTreeTrunk,
   invLeavesBush,
+  invCloud,
   invStone,
-  invGrassTop,
-  invGround,
 ];
 
-// -------------------- Functions
+// -------------------- Functions --------------------->
 
-//function for event listener when picking a tool
 function pickTool(e) {
-  if (e.target === axe) {
-    toolClicked = 1;
+  for (let i = 0; i < tooAndInvType.length; i++) {
+    if (e.target === tooAndInvType[i]) {
+      itemClicked = i + 1;
+    }
   }
-  if (e.target === pickAxe) {
-    toolClicked = 2;
-  }
-  if (e.target === shovel) {
-    toolClicked = 3;
-  }
-}
-tools.addEventListener("click", pickTool);
-
-// function that returns the class of the clicked inventory tile as assigned in the game world.
-
-function invItemClicked() {
-  let invReturnClass = "";
-  tools.removeEventListener("click", pickTool);
-  inventory.addEventListener("click", (e) => {
-    invType.forEach((type) =>
-      e.target == type
-        ? (invReturnClass = type.className
-            .replace("inventory-item", "cell")
-            .replace("inv-", ""))
-        : null
-    );
-    console.log(invReturnClass);
-  });
+  console.log(itemClicked);
 }
 
-//  function for removing tiles and storing them in object
+toolPanel.addEventListener("click", pickTool);
 
-function removeTile(toolNum, invItem, objItem, cls) {
+//  function for moving tiles and storing their inventory in object
+
+function handleTile(toolNum, invItem, objItem, cls) {
   gameGrid.addEventListener("click", (e) => {
-    if (toolClicked === toolNum && e.target.className == `cell ${cls}`) {
-      e.target.className = "hidden";
+    if (
+      itemClicked === toolNum &&
+      toolNum < 4 &&
+      e.target.className == `cell ${cls}`
+    ) {
+      e.target.className = "cell";
+      console.log(e.target, e.target.className);
       objItem++;
-      invItem.textContent = objItem;
+      counter[`${cls}`] = objItem;
+      invItem.textContent = counter[`${cls}`];
+      console.log(counter);
+    } else if (
+      itemClicked === toolNum &&
+      toolNum > 3 &&
+      counter[`${cls}`] != 0 &&
+      e.target.className == "cell"
+    ) {
+      e.target.className = `cell ${cls}`;
+      counter[`${cls}`] = counter[`${cls}`] - 1;
+      invItem.textContent = counter[`${cls}`];
     }
   });
 }
 
-//  function for returning tiles and removing them from object
-
-//----------invoking functions
-
-removeTile(3, invGrassTop, counter.invGrassTop, "grass-top");
-removeTile(1, invTreeTrunk, counter.invTreeTrunk, "tree-trunk");
-removeTile(1, invLeavesBush, counter.invLeavesBush, "leaves-bush");
-removeTile(2, invStone, counter.invStone, "stone");
-removeTile(3, invGrassTop, counter.invGrassTop, "grass-top");
-removeTile(3, invGround, counter.invGround, "ground");
+handleTile(1, invTreeTrunk, counter.invTreeTrunk, "tree-trunk");
+handleTile(1, invLeavesBush, counter.invLeavesBush, "leaves-bush");
+handleTile(2, invStone, counter.invStone, "stone");
+handleTile(3, invGrassTop, counter.invGrassTop, "grass-top");
+handleTile(3, invGround, counter.invGround, "ground");
+handleTile(4, invGround, counter.invGround, "ground");
+handleTile(5, invGrassTop, counter.invGrassTop, "grass-top");
+handleTile(6, invTreeTrunk, counter.invTreeTrunk, "tree-trunk");
+handleTile(7, invLeavesBush, counter.invLeavesBush, "leaves-bush");
+handleTile(9, invStone, counter.invStone, "stone");
