@@ -75,14 +75,15 @@ for (let r = 0; r < 3; r++) {
   tools.appendChild(tool);
 }
 
-const tool1 = tools.firstChild;
-tool1.textContent = "AXE";
-tool1.className = "tool tool1";
-const tool2 = tool1.nextSibling;
-tool2.textContent = "PICKAXE";
-tool2.className = "tool tool2";
-tool2.nextSibling.textContent = "SHOVEL";
-tool2.nextSibling.className = "tool tool3";
+const axe = tools.firstChild;
+axe.textContent = "AXE";
+axe.className = "tool axe";
+const pickAxe = axe.nextSibling;
+pickAxe.textContent = "PICKAXE";
+pickAxe.className = "tool pick-axe";
+const shovel = pickAxe.nextSibling;
+shovel.textContent = "SHOVEL";
+shovel.className = "tool shovel";
 
 //--------------------- Inventory ---------------------------
 
@@ -92,23 +93,53 @@ for (let r = 0; r < 6; r++) {
   inventory.appendChild(invItem);
 }
 
-const invItem1 = inventory.firstChild;
-invItem1.textContent = 0;
-invItem1.className = "inventory-item inv-item1";
-const invItem2 = invItem1.nextSibling;
-invItem2.textContent = 0;
-invItem2.className = "inventory-item inv-item2";
-const invItem3 = invItem2.nextSibling;
-invItem3.textContent = 0;
-invItem3.className = "inventory-item inv-item3";
-const invItem4 = invItem3.nextSibling;
-invItem4.textContent = 0;
-invItem4.className = "inventory-item inv-item4";
-const invItem5 = invItem4.nextSibling;
-invItem5.textContent = 0;
-invItem5.className = "inventory-item inv-item5";
-const invItem6 = invItem5.nextSibling;
-invItem6.textContent = 0;
-invItem6.className = "inventory-item inv-item6";
+const invGround = inventory.firstChild;
+invGround.textContent = 0;
+invGround.className = "inventory-item inv-ground";
+const invGrassTop = invGround.nextSibling;
+invGrassTop.textContent = 0;
+invGrassTop.className = "inventory-item grass-top";
+const invTreeTrunk = invGrassTop.nextSibling;
+invTreeTrunk.textContent = 0;
+invTreeTrunk.className = "inventory-item inv-tree-trunk";
+const invGrass = invTreeTrunk.nextSibling;
+invGrass.textContent = 0;
+invGrass.className = "inventory-item inv-grass";
+const invCloud = invGrass.nextSibling;
+invCloud.textContent = 0;
+invCloud.className = "inventory-item inv-cloud";
+const invStone = invCloud.nextSibling;
+invStone.textContent = 0;
+invStone.className = "inventory-item inv-stone";
 
 //--------------------- dynamics ---------------------------
+let toolClicked = 0;
+// Tool picked: AXE=1, PICKAXE=2, SHOVEL=3
+tools.addEventListener("click", (e) => {
+  if (e.target === axe) {
+    toolClicked = 1;
+  }
+  if (e.target === pickAxe) {
+    toolClicked = 3;
+  }
+  if (e.target === shovel) {
+    toolClicked = 3;
+  }
+});
+// Inventory object for storing removed cells by type
+let counter = {
+  invGround: 0,
+  invGrassTop: 0,
+  invTreeTrunk: 0,
+  invGrass: 0,
+  invCloud: 0,
+  invStone: 0,
+};
+gameGrid.addEventListener("click", (e) => {
+  console.log(e.target.className);
+  if (toolClicked === 1 && e.target.className == "cell tree-trunk") {
+    e.target.className = "hidden";
+    counter.invTreeTrunk++;
+    invTreeTrunk.textContent = counter.invTreeTrunk;
+  }
+});
