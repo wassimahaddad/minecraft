@@ -65,27 +65,17 @@ const generateWorld = () => {
     }
   }
 };
-
 generateWorld();
 
 //---------------- Tools Generation -------------------------
 
 const tools = document.querySelector(".tools");
-for (let r = 0; r < 4; r++) {
+for (let r = 0; r < 3; r++) {
   let tool = document.createElement("div");
   tools.appendChild(tool);
 }
-const buttons = tools.firstChild;
-const resetBtn = document.createElement("button");
-buttons.className = "buttons";
-resetBtn.textContent = "RESET";
-resetBtn.className = "reset-button";
-buttons.appendChild(resetBtn);
-const quitBtn = document.createElement("button");
-quitBtn.textContent = "QUIT";
-quitBtn.className = "quit-button";
-buttons.appendChild(quitBtn);
-const axe = buttons.nextSibling;
+
+const axe = tools.firstChild;
 axe.textContent = "AXE";
 axe.className = "tool axe";
 const pickAxe = axe.nextSibling;
@@ -142,7 +132,7 @@ let counter = {
 
 // array to identify elements in the tool panel
 
-const toolAndInvType = [
+const tooAndInvType = [
   axe,
   pickAxe,
   shovel,
@@ -152,8 +142,6 @@ const toolAndInvType = [
   invLeavesBush,
   invCloud,
   invStone,
-  resetBtn,
-  quitBtn,
 ];
 
 // -------------------- Functions --------------------->
@@ -161,14 +149,12 @@ const toolAndInvType = [
 //function for picking too/inventory item
 
 function pickItem(e) {
-  for (let i = 0; i < toolAndInvType.length; i++) {
-    if (e.target === toolAndInvType[i]) {
+  for (let i = 0; i < tooAndInvType.length; i++) {
+    if (e.target === tooAndInvType[i]) {
       itemClicked = i + 1;
     }
   }
-  if (itemClicked === 10) {
-    location.reload();
-  }
+  console.log(itemClicked);
 }
 
 toolPanel.addEventListener("click", pickItem);

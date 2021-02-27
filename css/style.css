@@ -71,15 +71,15 @@
 /* ------------------------ Tools  ----------------------- */
 .tools {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
 }
 
 .tool {
   border: 1px solid #333;
-  margin: 20px 40px;
+  margin: 10px 20px;
   color: grey;
   text-align: end;
-  padding-top: 80px;
+  padding-top: 100px;
   padding-right: 5px;
   font-size: 12px;
   font-weight: bold;
@@ -99,6 +99,22 @@
 .pick-axe:hover,
 .shovel:hover {
   border: 1px solid white;
+}
+/* ---------------------- Buttons --------------------- */
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  border: 1px solid #333;
+  margin: 10px 20px;
+  color: grey;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.reset-button,
+.quit-button {
+  height: 50px;
 }
 /* ---------------------- Inventory --------------------- */
 .inventory {
