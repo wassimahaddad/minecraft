@@ -166,6 +166,44 @@ function pickItem(e) {
       itemClicked = i + 1;
     }
   }
+  if (itemClicked === 1) {
+    console.log(e.target.className);
+    if (e.target.className === "tool axe") {
+      e.target.className = e.target.className.replace("axe", "axe-clicked");
+      const temp = e.target;
+      temp.nextSibling.className = "tool pick-axe";
+      temp.nextSibling.nextSibling.className = "tool shovel";
+    }
+    console.log(e.target.className);
+    console.log(e.target.nextSibling.className);
+    console.log(e.target.nextSibling.nextSibling.className);
+  }
+  if (itemClicked === 2) {
+    console.log(e.target.className);
+    if (e.target.className === "tool pick-axe") {
+      e.target.className = e.target.className.replace(
+        "pick-axe",
+        "pick-axe-clicked"
+      );
+      const temp = e.target;
+      temp.previousSibling.className = "tool axe";
+      temp.nextSibling.className = "tool shovel";
+    }
+    console.log(e.target.className);
+  }
+  if (itemClicked === 3) {
+    console.log(e.target.className);
+    if (e.target.className === "tool shovel") {
+      e.target.className = e.target.className.replace(
+        "shovel",
+        "shovel-clicked"
+      );
+      const temp = e.target;
+      temp.previousSibling.className = "tool pick-axe";
+      temp.previousSibling.previousSibling.className = "tool axe";
+    }
+    console.log(e.target.className);
+  }
   if (itemClicked === 10) {
     location.reload();
   }

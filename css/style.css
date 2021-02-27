@@ -88,11 +88,23 @@
 .axe {
   background: url("../img/axe.png") no-repeat center center/cover;
 }
+.axe-clicked {
+  background: url("../img/axe.png") no-repeat center center/cover;
+  background-color: white;
+}
 .pick-axe {
   background: url("../img/diamond_pickaxe.png") no-repeat center center/cover;
 }
+.pick-axe-clicked {
+  background: url("../img/diamond_pickaxe.png") no-repeat center center/cover;
+  background-color: white;
+}
 .shovel {
   background: url("../img/shovel.png") no-repeat center center/cover;
+}
+.shovel-clicked {
+  background: url("../img/shovel.png") no-repeat center center/cover;
+  background-color: white;
 }
 
 .axe:hover,
