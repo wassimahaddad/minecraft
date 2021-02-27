@@ -18,6 +18,32 @@
   height: 100vh;
   background: url("../img/main1.jpeg") no-repeat center center/cover;
 }
+
+.instructions {
+  font-size: 20px;
+  height: 200px;
+  width: 1000px;
+  margin-top: 70px;
+  margin-left: auto;
+  margin-right: auto;
+  background: #999;
+}
+
+.instructions #message {
+  border-bottom: 1px solid black;
+}
+
+.inst-lines {
+  height: 25%;
+  text-align: center;
+  padding-top: 5px;
+  padding-left: 10px;
+}
+
+.inst-lines img {
+  width: 30px;
+  height: 30px;
+}
 a,
 .start-button {
   width: 200px;
@@ -27,6 +53,7 @@ a,
   margin-left: auto;
   font-size: 25px;
   padding: 5px;
+  background-color: #999;
 }
 .container {
   width: 800px;
