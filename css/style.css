@@ -90,26 +90,32 @@
 }
 .axe-clicked {
   background: url("../img/axe.png") no-repeat center center/cover;
-  background-color: white;
+  background-color: green;
+  color: black;
 }
 .pick-axe {
   background: url("../img/diamond_pickaxe.png") no-repeat center center/cover;
 }
 .pick-axe-clicked {
   background: url("../img/diamond_pickaxe.png") no-repeat center center/cover;
-  background-color: white;
+  background-color: green;
+  color: black;
 }
 .shovel {
   background: url("../img/shovel.png") no-repeat center center/cover;
 }
 .shovel-clicked {
   background: url("../img/shovel.png") no-repeat center center/cover;
-  background-color: white;
+  background-color: green;
+  color: black;
 }
 
 .axe:hover,
 .pick-axe:hover,
-.shovel:hover {
+.shovel:hover,
+.axe-clicked:hover,
+.pick-axe-clicked:hover,
+.shovel-clicked:hover {
   border: 1px solid white;
 }
 /* ---------------------- Buttons --------------------- */
