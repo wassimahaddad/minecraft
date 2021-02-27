@@ -1,9 +1,8 @@
-// Welcome page
-
 //------------------ Matrix generation ----------------------
 const gameGridArr = [];
 const gameGrid = document.querySelector(".game-world");
-
+//World Generation
+//(break down if there's time left)
 const generateWorld = () => {
   for (let r = 0; r < 20; r++) {
     let row = [];
@@ -83,17 +82,10 @@ buttons.className = "buttons";
 resetBtn.textContent = "RESET";
 resetBtn.className = "reset-button";
 buttons.appendChild(resetBtn);
-
-const quitBtnLink = document.createElement("a");
-quitBtnLink.href = "../html/index.html";
-quitBtnLink.className = "quit-button";
-buttons.appendChild(quitBtnLink);
-
 const quitBtn = document.createElement("button");
-quitBtn.className = "quit-button";
 quitBtn.textContent = "QUIT";
-quitBtnLink.appendChild(quitBtn);
-
+quitBtn.className = "quit-button";
+buttons.appendChild(quitBtn);
 const axe = buttons.nextSibling;
 axe.textContent = "AXE";
 axe.className = "tool axe";
@@ -167,7 +159,8 @@ const toolAndInvType = [
 
 // -------------------- Functions --------------------->
 
-//function for picking too/inventory item
+//function for picking tool/inventory/reser/quit item
+//(break down if there's time left)
 
 function pickItem(e) {
   for (let i = 0; i < toolAndInvType.length; i++) {
