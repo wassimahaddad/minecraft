@@ -85,8 +85,8 @@ resetBtn.className = "reset-button";
 buttons.appendChild(resetBtn);
 
 const quitBtnLink = document.createElement("a");
-quitBtnLink.href = "../html/index.html";
-quitBtnLink.className = "quit-button";
+quitBtnLink.href = "./index.html";
+quitBtnLink.className = "quit";
 buttons.appendChild(quitBtnLink);
 
 const quitBtn = document.createElement("button");

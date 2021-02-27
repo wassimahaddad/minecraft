@@ -1,6 +1,6 @@
 # Structure
 
-1. Landing Page (psuedo element)
+1. Landing Page 
    1.1 create page (image)
    1.2 create "start" button
 2. The World
