@@ -196,6 +196,11 @@ function pickItem(e) {
       pickAxe.className = "tool pick-axe";
     }
   }
+  if (itemClicked > 3 && itemClicked < 10) {
+    axe.className = "tool axe";
+    pickAxe.className = "tool pick-axe";
+    shovel.className = "tool shovel";
+  }
   if (itemClicked === 10) {
     location.reload();
   }

@@ -25,6 +25,8 @@ a,
   margin-bottom: 200px;
   margin-right: auto;
   margin-left: auto;
+  font-size: 25px;
+  padding: 5px;
 }
 .container {
   width: 800px;
@@ -138,7 +140,6 @@ a,
 .buttons {
   justify-content: space-between;
   flex-direction: column;
-  border: 1px solid #333;
   margin: 25px 20px;
   color: grey;
   font-size: 20px;
@@ -148,6 +149,7 @@ a,
 .reset-button {
   height: 50px;
   width: 100px;
+  margin-left: 5px;
 }
 
 .quit-button {
